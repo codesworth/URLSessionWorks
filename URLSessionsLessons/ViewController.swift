@@ -9,12 +9,65 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    var datePicker:UIDatePicker!
+    var calcButton:UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        datePicker = UIDatePicker()
+        calcButton = UIButton()
+        view.addSubview(datePicker)
+        view.addSubview(calcButton)
+        datePicker.translatesAutoresizingMaskIntoConstraints = false
+        calcButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            datePicker.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
+            datePicker.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
+            datePicker.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            datePicker.heightAnchor.constraint(equalToConstant: 120),
+            calcButton.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 40),
+            calcButton.widthAnchor.constraint(equalToConstant: 200),
+            calcButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0),
+            calcButton.heightAnchor.constraint(equalToConstant: 35)
+            
+        ])
+
+        calcButton.setTitle("Calculate Prime Numbers", for: .normal)
+        calcButton.backgroundColor = UIColor.groupTableViewBackground
+        calcButton.setTitleColor(.blue, for: .normal)
+        calcButton.addTarget(self, action: #selector(calculate), for: .touchUpInside)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
 
+    
+    @objc func calculate(){
+        for num in  0...100_000_000{
+           let isPrimenum = isPrime(number: num)
+            print("\(num) is prime: \(isPrimenum)")
+        }
+    }
+    
+    func isPrime(number:Int)->Bool{
+        if number <= 1{
+            return false
+        }
+        
+        if number <= 3 {
+            return true
+        }
+        
+        var i = 2
+        while i * 1 <= number {
+            if number % i == 0 {
+                return false
+            }
+            
+            i = i + 2
+        }
+        return true
+    }
 }
 
