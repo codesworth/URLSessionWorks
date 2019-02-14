@@ -9,9 +9,6 @@
 import UIKit
 
 
-
-
-
 class Sessions{
     
     let config = URLSessionConfiguration.default
