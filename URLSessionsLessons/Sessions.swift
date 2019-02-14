@@ -19,6 +19,7 @@ class Sessions{
     
     init() {
         config.waitsForConnectivity = true
+        
         session = URLSession(configuration: config)
     }
     
@@ -36,6 +37,26 @@ class Sessions{
             guard let result = NSString(data: data, encoding: String.Encoding.utf8.rawValue) as String? else {return}
             print("The result was: ", result)
             
+        }
+        
+        task.resume()
+    }
+    
+    func post(_ data:Data? = nil){
+        let data = data ?? "{'hello' : 'world'}".data(using: .utf8)
+        let url = URL(string: "https://httpbin.org/post")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "Post"
+        request.httpBody = data
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                guard let error = error else {return}
+                print("Error out: ",error.localizedDescription)
+                return}
+            guard let data = data else {return}
+            let postResp = String(data: data, encoding: .utf8)
+            print("Response is: \(postResp ?? "No response")")
         }
         
         task.resume()

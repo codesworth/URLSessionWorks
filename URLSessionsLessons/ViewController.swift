@@ -48,7 +48,7 @@ class ViewController: UIViewController {
     
     @objc func calculate(){
        let sessions = Sessions()
-        sessions.fetch()
+        sessions.post()
     }
     
     
