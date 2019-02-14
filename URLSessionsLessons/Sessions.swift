@@ -6,7 +6,10 @@
 //  Copyright © 2019 Shadrach Mensah. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+
+
 
 
 class Sessions{
@@ -60,5 +63,24 @@ class Sessions{
         }
         
         task.resume()
+    }
+    
+    func upload(){
+        let image = UIImage(named: "mojave-day.jpg")
+        let data = image?.jpegData(compressionQuality: 1)
+        let url = URL(string: "http://127.0.0.1:5000/upload")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "Post"
+        let session = URLSession(configuration: .default, delegate: SessionDelegate(), delegateQueue: .main)
+        session.uploadTask(with: request, from: data) { (data, response, error) in
+            if let data = data{
+                let resp = String(data: data, encoding: .utf8)
+                print(resp ?? "No respose")
+            }else{
+                let error = error! as NSError
+                print("Error: SOmething bad: ",error.debugDescription)
+            }
+        }.resume()
+        
     }
 }

@@ -15,6 +15,8 @@
 		3872F6662214CA4600AC547E /* URLSessionsLessonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872F6652214CA4600AC547E /* URLSessionsLessonsTests.swift */; };
 		3872F6712214D30900AC547E /* CalculatePrimeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872F6702214D30900AC547E /* CalculatePrimeOperation.swift */; };
 		3872F673221584F500AC547E /* Sessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872F672221584F500AC547E /* Sessions.swift */; };
+		3872F67522159A6600AC547E /* mojave-day.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3872F67422159A6600AC547E /* mojave-day.jpg */; };
+		3872F6772215A5F200AC547E /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3872F6762215A5F200AC547E /* SessionDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		3872F6672214CA4600AC547E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3872F6702214D30900AC547E /* CalculatePrimeOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatePrimeOperation.swift; sourceTree = "<group>"; };
 		3872F672221584F500AC547E /* Sessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sessions.swift; sourceTree = "<group>"; };
+		3872F67422159A6600AC547E /* mojave-day.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mojave-day.jpg"; sourceTree = "<group>"; };
+		3872F6762215A5F200AC547E /* SessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +87,13 @@
 			children = (
 				3872F6502214CA4300AC547E /* AppDelegate.swift */,
 				3872F6522214CA4300AC547E /* ViewController.swift */,
+				3872F6762215A5F200AC547E /* SessionDelegate.swift */,
 				3872F6702214D30900AC547E /* CalculatePrimeOperation.swift */,
 				3872F6542214CA4300AC547E /* Main.storyboard */,
 				3872F6572214CA4600AC547E /* Assets.xcassets */,
 				3872F6592214CA4600AC547E /* LaunchScreen.storyboard */,
 				3872F65C2214CA4600AC547E /* Info.plist */,
+				3872F67422159A6600AC547E /* mojave-day.jpg */,
 				3872F672221584F500AC547E /* Sessions.swift */,
 			);
 			path = URLSessionsLessons;
@@ -185,6 +191,7 @@
 			files = (
 				3872F65B2214CA4600AC547E /* LaunchScreen.storyboard in Resources */,
 				3872F6582214CA4600AC547E /* Assets.xcassets in Resources */,
+				3872F67522159A6600AC547E /* mojave-day.jpg in Resources */,
 				3872F6562214CA4300AC547E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3872F673221584F500AC547E /* Sessions.swift in Sources */,
+				3872F6772215A5F200AC547E /* SessionDelegate.swift in Sources */,
 				3872F6532214CA4300AC547E /* ViewController.swift in Sources */,
 				3872F6712214D30900AC547E /* CalculatePrimeOperation.swift in Sources */,
 				3872F6512214CA4300AC547E /* AppDelegate.swift in Sources */,
