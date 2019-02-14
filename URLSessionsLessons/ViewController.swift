@@ -40,34 +40,17 @@ class ViewController: UIViewController {
         calcButton.addTarget(self, action: #selector(calculate), for: .touchUpInside)
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    
+    
 
 
     
     @objc func calculate(){
-        for num in  0...100_000_000{
-           let isPrimenum = isPrime(number: num)
-            print("\(num) is prime: \(isPrimenum)")
-        }
+       let sessions = Sessions()
+        sessions.fetch()
     }
     
-    func isPrime(number:Int)->Bool{
-        if number <= 1{
-            return false
-        }
-        
-        if number <= 3 {
-            return true
-        }
-        
-        var i = 2
-        while i * 1 <= number {
-            if number % i == 0 {
-                return false
-            }
-            
-            i = i + 2
-        }
-        return true
-    }
+    
 }
 
