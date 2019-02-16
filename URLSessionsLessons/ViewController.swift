@@ -47,9 +47,11 @@ class ViewController: UIViewController {
 
     
     @objc func calculate(){
-       let sessions = Sessions()
+       //let sessions = Sessions()
         
-        sessions.upload()
+        //sessions.upload()
+        let auth = AuthSession()
+        auth.signIn()
     }
     
     
